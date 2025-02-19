@@ -1,0 +1,114 @@
+.backarrow{
+    color: #000;
+    font-size: 18px;
+    margin-left: 24px;
+}
+.heaertitle{
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+}
+.childimgs{
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+}
+.listpadd{
+    padding: 0 14px;
+}
+.clidename{
+    font-size: 15px;
+    color: #000;
+    font-weight: 400;
+    padding-top: 6px;
+}
+.clidedetail{
+    font-size: 13px;
+    color: #a5a5a5;
+    padding-top: 5px;
+}
+.titleHed{
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+}
+.itemclass{
+    background: #f7f8f8;
+    --background: #f7f8f8;
+    border-radius: 50px;
+    --border-radius: 50px;
+    --min-height: 42px !important;
+}
+.textaitemclass{
+    background: #f7f8f8;
+    --background: #f7f8f8;
+    border-radius: 20px;
+    --border-radius: 20px;
+    padding: 12px 0;
+}
+.iconcls{
+    font-size: 18px;
+    margin: 0px 10px 0px 0px;
+    color: #afafaf;
+}
+.timepicker{
+    background: #f7f8f8;
+    --background: #f7f8f8;
+    border-radius: 50px;
+    --border-radius: 50px;
+    font-size: 16px;
+    --font-size: 16px;
+    --padding-start: 8px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 4px;
+    color: #969696;
+}
+.ioninput{
+    background: #f7f8f8;
+    --background: #f7f8f8;
+    border-radius: 50px;
+    --border-radius: 50px;
+    font-size: 14px;
+    --font-size: 14px;
+    --padding-start: 8px;
+    width: 100%;
+}
+.toglebtn{
+    --handle-background-checked: #fff;
+    --background-checked: #ff9a98;
+    width: 40px;
+    height: 24px;
+    --handle-width: 18px;
+    --handle-height: 18px;
+}
+.textariya{
+    margin: 0px !important;
+    --padding-top:0px;
+    border-radius: 2px;
+    --border-radius: 2px;
+    --padding-start: 8px !important;
+}
+.Submitbtn{
+    text-transform: none;
+    --text-transform: none;
+    background: #ff9a98;
+    --background: #ff9a98;
+    color: #fff;
+    --color: #fff;
+    font-size: 16px;
+    --font-size: 16px;
+    border-radius: 50px;
+    --border-radius: 50px;
+    box-shadow: none;
+    --box-shadow: none;
+    font-weight: 500;
+    --font-weight: 500;
+    height: 40px;
+    --height: 40px;
+    width: 40%;
+    --width: 40%;
+    margin: auto;
+    display: table;
+}

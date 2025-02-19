@@ -1,0 +1,160 @@
+<ion-content class="fullback">
+
+  <div class="maindiv">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_45"></div>
+      <ion-row>
+        <ion-col size="3" class="vertical_centr" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+          <div class="heaertitle">Demographic Data</div>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <div class="ht_60"></div>
+    </div>
+
+    <div class="listpadd ion-text-right" *ngIf="!Myimage">
+      <ion-icon name="camera-outline" class="cameraicon" (click)="selectImage()"></ion-icon>
+    </div>
+    <div class="listpadd ion-text-right" *ngIf="Myimage">
+      <img src="{{config.api}}{{Myimage}}" class="profileimg">
+    </div>
+    <div class="ht_10"></div>
+   
+    <div class="ht_10"></div>
+    <div class="listpadd">
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="person-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-input [(ngModel)]="name" class="ioninput" placeholder="Name" type="text"></ion-input>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="calendar-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-datetime [(ngModel)]="dob" class="ioninput" placeholder="Date of Birth" type="text"></ion-datetime>
+      </ion-item>
+      <!--
+       <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="people-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-input [(ngModel)]="history_cancer" class="ioninput" placeholder="History cancer" type="text"></ion-input>
+      </ion-item>-->
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="people-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Choose Gender" [(ngModel)]="gender">
+          <ion-select-option value="Male">Male</ion-select-option>
+          <ion-select-option value="Female">Female</ion-select-option>
+          <ion-select-option value="Other">Other</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Education" [(ngModel)]="education">
+          <ion-select-option value="School">School</ion-select-option>
+          <ion-select-option value="College">College</ion-select-option>
+          <ion-select-option value="School dropout">School dropout</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none" >
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Parent occupation" [(ngModel)]="parent_occupation">
+          <ion-select-option *ngFor="let p of pc"  value="{{p.id}}">{{p.name}}</ion-select-option>
+          <!-- <ion-select-option value="Elementary Occupation">Elementary Occupation</ion-select-option>
+          <ion-select-option value="Plant & Machine Operators and Assemblers">Plant & Machine Operators and Assemblers</ion-select-option>
+          <ion-select-option value="Craft & Related Trade Workers">Craft & Related Trade Workers</ion-select-option>
+          <ion-select-option value="Skilled Agricultural & Fishery Workers">Skilled Agricultural & Fishery Workers</ion-select-option>
+          <ion-select-option value="Skilled Workers and Shop & Market Sales Workers">Skilled Workers and Shop & Market Sales Workers</ion-select-option>
+          <ion-select-option value="Clerks">Clerks </ion-select-option>
+          <ion-select-option value="Technicians and Associate Professionals">Technicians and Associate Professionals </ion-select-option>
+          <ion-select-option value="Professionals">Professionals </ion-select-option> -->
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Education of the family head" [(ngModel)]="education_family_head">
+          <ion-select-option *ngFor="let f of ducationf" value="{{f.id}}">{{f.name}}</ion-select-option>
+          <!-- <ion-select-option value="Primary school certificate">Primary school certificate</ion-select-option>
+          <ion-select-option value="Middle school certificate">Middle school certificate</ion-select-option>
+          <ion-select-option value="High school certificate">High school certificate</ion-select-option>
+          <ion-select-option value="Intermediate or diploma">Intermediate or diploma</ion-select-option>
+          <ion-select-option value="Graduate">Graduate</ion-select-option>
+          <ion-select-option value="Profession or Honours">Profession or Honours</ion-select-option> -->
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Monthly income of the family" [(ngModel)]="monthly_income">
+          <ion-select-option  *ngFor="let m of monthlyincome" value="{{m.id}}">{{m.name}}</ion-select-option>
+          <!-- <ion-select-option value="6k-18k">6k-18k</ion-select-option>
+          <ion-select-option value="18k–30k">18k–30k</ion-select-option>
+          <ion-select-option value="31k–46k">31k–46k</ion-select-option>
+          <ion-select-option value="46k-61k">46k-61k</ion-select-option>
+          <ion-select-option value="61k–1L">61k–1L</ion-select-option>
+          <ion-select-option value="Above 1L">Above 1L</ion-select-option> -->
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Diganosis" [(ngModel)]="diganosis">
+          <ion-select-option *ngFor="let d of getdiganosi" value="{{d.id}}">{{d.name}}</ion-select-option>
+          <!-- <ion-select-option value="Brain & spinal cord tumour">Brain & spinal cord tumour</ion-select-option>
+          <ion-select-option value="Neuroblastoma">Neuroblastoma</ion-select-option>
+          <ion-select-option value="Wilms tumor">Wilms tumor</ion-select-option>
+          <ion-select-option value="lymphoma (include hodgkin and non hodgkin)">lymphoma (include hodgkin and non hodgkin)</ion-select-option>
+          <ion-select-option value="Rhabdomyosacroma">Rhabdomyosacroma</ion-select-option>
+          <ion-select-option value="Retinoblastoma">Retinoblastoma</ion-select-option>
+          <ion-select-option value="Bone cancer ( include osteoscarcoma & ewing scarcoma )">Bone cancer ( include osteoscarcoma & ewing scarcoma )</ion-select-option> -->
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-label style="color:#afafaf;font-size:14px;padding-left:8px;">Patient family history of cancer</ion-label>
+        <ion-toggle slot="end" [checked]="true" [(ngModel)]="patient_family_history_of_cancer" class="toglebtn"></ion-toggle>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="textaitemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-textarea class="ioninput textariya" placeholder="Details" type="text" rows="6" [(ngModel)]="details"></ion-textarea>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Type of treatment" [(ngModel)]="type_of_treatment">
+          <ion-select-option *ngFor="let d of type_of_treatment_data" value="{{d.id}}">{{d.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Menstrual status" [(ngModel)]="menstrual_status">
+          <ion-select-option *ngFor="let d of menstrual_status_data" value="{{d.id}}">{{d.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_20"></div>
+      <ion-button class="Submitbtn" (click)="submit()">Submit</ion-button>
+      <div class="ht_50"></div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,26 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>otp</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="paddiv">
+    <div class="ht_30"></div>
+    <div class="ht_30"></div>
+    <div class="welcomebc"> Get Otp </div>
+    <div class="ht_30"></div>
+    <ion-item class="itemclass" lines="none">
+      <ion-icon name="lock-closed-outline" slot="start" class="iconcls"></ion-icon>
+      <ion-input class="ioninput" [(ngModel)]="otp" placeholder="Enter OTP" type="text"></ion-input>
+    </ion-item>
+    <div class="ht_10"></div>
+    <div class="resenddiv" (click)="reotp()">Resend OTP</div>
+    <div class="ht_30"></div>
+    <div>
+      <ion-button class="loginbtn" (click)="verify()"> Verify </ion-button>
+    </div>
+    <div class="ht_30"></div>
+  </div>
+
+</ion-content>

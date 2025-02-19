@@ -1,0 +1,62 @@
+.backarrow{
+    color: #000;
+    font-size: 18px;
+    margin-left: 24px;
+}
+.heaertitle{
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+}
+.Childrenpadd{
+    padding: 0 40px;
+}
+.ChildrenPam{
+    border-radius: 16px;
+    padding: 0 0 0 10px;
+    background: linear-gradient(135deg, #ebf2ff 24%, #eaeeff 60%);
+}
+.addbBtn{
+    font-size: 14px;
+    color: #fff;
+    background: linear-gradient(135deg, #9bbdfe 24%, #93a9fd 60%);
+    padding: 8px 16px;
+    border-radius: 30px;
+    width: fit-content;
+    float: right;
+    margin: 6px 10px;
+}
+.addbBtn:active{
+    font-size: 15px;
+    color: #fff;
+    background: linear-gradient(135deg, #74a4ff 24%, #708dff 60%);
+    padding: 9px 17px 10px;
+    border-radius: 30px;
+    width: fit-content;
+    float: right;
+    margin: 4px 9px;
+}
+.childimgs{
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+}
+.listpadd{
+    padding: 0 14px;
+}
+.clidename{
+    font-size: 15px;
+    color: #000;
+    font-weight: 400;
+    padding-top: 6px;
+}
+.clidedetail{
+    font-size: 13px;
+    color: #a5a5a5;
+    padding-top: 5px;
+}
+.playcercul{
+    font-size: 24px;
+    color: #888888;
+}

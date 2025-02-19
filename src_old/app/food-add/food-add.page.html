@@ -1,0 +1,113 @@
+<ion-content class="fullback">
+
+  <div class="maindiv" style="height:100%">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_45"></div>
+      <ion-row>
+        <ion-col size="3" class="vertical_centr" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+          <div class="heaertitle">Food Add details</div>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <div class="ht_50"></div>
+    </div>
+
+    <div class="listpadd">
+      <div class="titlehednm">Select Date</div>
+      <div class="ht_20"></div>
+      <div class="vertical_centr">
+        <ion-icon name="play-outline" class="playicon privios"></ion-icon>
+        <span class="datespan">May 2023</span>
+        <ion-icon name="play-outline"></ion-icon>
+      </div>
+      <ion-row>
+        <ion-col size="3">
+          <div class="datenormals">
+            <div class="dyvday">Wed</div>
+            <div class="dyvdate">12</div>
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div class="datenormals">
+            <div class="dyvday">Thu</div>
+            <div class="dyvdate">13</div>
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div class="datemailsiv">
+            <div class="dyvday">Fri</div>
+            <div class="dyvdate">14</div>
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div class="datenormals">
+            <div class="dyvday">Sat</div>
+            <div class="dyvdate">15</div>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <div class="ht_20"></div>
+      <div class="titlehednm">Select Time</div>
+      <div class="ht_20"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-datetime class="timepicker" placeholder="3 30 PM" displayFormat="h mm A" pickerFormat="h mm A">
+        </ion-datetime>
+      </ion-item>
+      <div class="ht_20"></div>
+      <div class="titlehednm">Select Food</div>
+      <div class="ht_20"></div>
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/coffee.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Coffee</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_10"></div>
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/milk.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Milk</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_10"></div>
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/orange.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Orange</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <div class="ht_20"></div>
+      <div class="titlehednm">Add Quantity</div>
+      <div class="ht_20"></div>
+
+      <ion-row>
+        <ion-col>
+          <ion-input></ion-input>
+        </ion-col>
+      </ion-row>
+
+    </div>
+  </div>
+</ion-content>

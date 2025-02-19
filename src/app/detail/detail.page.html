@@ -1,0 +1,85 @@
+<ion-content class="fullback">
+
+  <div class="maindiv" style="height:100%">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+    <div>
+      <div class="ht_45" style="background-color: #fce44c;"></div>
+      <ion-row style="background-color: #fce44c;">
+        <ion-col size="1" class="vertical_centr1" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <ion-row>
+        <img src="{{config.imgapi}}{{data.photo}}" style="width: 100%;">
+      </ion-row>
+
+      <div style="margin-left: 5%;">
+        <ion-row>
+          <h5 class="title">{{data.name}}</h5>
+
+        </ion-row>
+        <ion-row>
+          <div class="subtitle">
+            Nutrition
+          </div>
+        </ion-row>
+        <ion-slides style="margin-top: 5%;margin-right: 5%;" [options]="slideOpts">
+          <ion-slide>
+            <ion-row class="roundbox">
+              <img style="width: 13px;" src="assets/imgs/kal.png">
+              &nbsp;
+              <span style="font-size: 13px;
+              margin: auto;">{{data.calories}}kal cal</span>
+            </ion-row>
+          </ion-slide>
+          <ion-slide>
+            <ion-row class="roundbox">
+              <img style="width: 20px;" src="assets/imgs/protine.png">&nbsp;
+              <span style="font-size: 13px;
+              margin: auto;">{{data.protein}}g protein</span>
+            </ion-row>
+          </ion-slide>
+          <ion-slide>
+            <ion-row class="roundbox">
+              <img style="width: 20px;" src="assets/imgs/egg.png">&nbsp;
+              <span style="font-size: 13px;
+             margin: auto;">{{data.fats}}g fats</span>
+            </ion-row>
+          </ion-slide>
+          <ion-slide>
+            <ion-row class="roundbox">
+              <img style="width: 20px;" src="assets/imgs/carbo.png">&nbsp;
+              <span style="font-size: 13px;
+              margin: auto;">{{data.carbo}}g carbo</span>
+            </ion-row>
+          </ion-slide>
+          <ion-slide>
+            <ion-row class="roundbox">
+              <img style="width: 20px;" src="assets/imgs/carbo.png">&nbsp;
+              <span style="font-size: 13px;
+              margin: auto;">{{data.iron}}g iron</span>
+            </ion-row>
+          </ion-slide>
+        </ion-slides>
+        <ion-row>
+          <div class="subtitle">
+            Description
+          </div>
+        </ion-row>
+
+        <ion-row style="margin-top:5%">
+          <div>{{data.description}}</div>
+        </ion-row>
+        <img src="assets/imgs/add.png" class="add">
+
+
+      </div>
+
+
+    </div>
+  </div>
+</ion-content>

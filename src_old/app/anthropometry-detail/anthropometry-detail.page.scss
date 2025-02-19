@@ -1,0 +1,55 @@
+.backarrow{
+    color: #000;
+    font-size: 18px;
+    margin-left: 24px;
+}
+.heaertitle{
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+}
+.listpadd{
+    padding: 0 14px;
+}
+.childimgs{
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+}
+.clidename{
+    font-size: 15px;
+    color: #000;
+    font-weight: 400;
+}
+.detaildiv{
+    font-size: 14px;
+    color: #000;
+    padding: 3px 0 0 0;
+}
+.datebuttonback{
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    background: linear-gradient(110deg, #93a9fd 20%, #9bbdfe 75%);
+    position: relative;
+    font-size: 16px;
+    margin: 4px 3px;
+}
+.datebuttonback:active{
+    height: 48px;
+    width: 48px;
+    font-size: 18px;
+    margin: 0px 1px;
+}
+.dateback{
+    transform: rotate(180deg);
+}
+.datenext{
+    color: #fff;
+    font-weight: 500;
+}
+.fridejune{
+    font-size: 13px;
+    color: #8f8f8f;
+}

@@ -1,0 +1,517 @@
+<ion-content class="fullback">
+
+  <div class="maindiv">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_45"></div>
+      <ion-row>
+        <ion-col size="3" class="vertical_centr" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+          <div class="heaertitle">Food Monitoring</div>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <div class="ht_50"></div>
+    </div>
+
+    <div style="width: 80%;
+    margin: auto;">
+      <ion-item>
+        <ion-label style="color:black;font-size: 14px;">Select Child</ion-label>
+        <ion-select [(ngModel)]="child" (ionChange)="getdatewisefood()">
+          <ion-select-option *ngFor="let c of childata" value="{{c.id}}">{{c.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <div class="ht_20"></div>
+    <ion-row class="listpadd">
+      <ion-col size="3" class="vertical_centr">
+        <div class="datebuttonback vertical_centr" (click)="DateChange(-1)">
+          <ion-icon name="play-outline" class="datenext dateback"></ion-icon>
+        </div>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding vertical_centr">
+        <div class="fridejune">{{Dateshow}}</div>
+      </ion-col>
+      <ion-col size="3" class="vertical_centr">
+        <div class="datebuttonback vertical_centr" (click)="DateChange(+1)">
+          <ion-icon name="play-outline" class="datenext"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+    <div class="ht_20"></div>
+    <ion-row>
+      <ion-col size="4">
+        <div class="datenormals">
+          <div class="dyvday">{{dayago}}</div>
+          <div class="dyvdate">{{mindate}}</div>
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div class="datemailsiv">
+          <div class="dyvday">{{datedis}}</div>
+          <div class="dyvdate">{{datedi}}</div>
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div class="datenormals">
+          <div class="dyvday">{{dayafter}}</div>
+          <div class="dyvdate">{{maxdate}}</div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <div class="listpadd">
+      <div class="ht_20"></div>
+      <div *ngFor="let c of foods;let i=index;">
+        <!-- <div *ngFor="let f of c.food;let i=index;"> -->
+        <ion-row style="padding: 4px;margin-top: 7px;">
+          <ion-col size="5.5">
+            <div class="titlehednm">{{c.name}}</div>
+          </ion-col>
+          <ion-col size="2">
+            <div class="roundclass vertical_centr" (click)="addfood(c.id)">
+              <ion-icon name="add-outline" class="ellipsecls"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col size="4" style="text-align: right;" *ngIf="displydata == '0'">
+            <div style="font-size: 13px;color: gray;">Not Added
+            </div>
+          </ion-col>
+          <ion-col size="4" style="text-align: right;" *ngIf="displydata == '1'">
+            <div *ngFor="let cat of caloriedata;let j=index;">
+              <div style="font-size: 13px;color: gray;" *ngIf="j == i && cat == '0-0'">Not Added
+              </div>
+              <!-- <div style="font-size: 13px;color: gray;" *ngIf="j == i && cat != '0-0'">{{mealsc(cat)}} meals |
+                {{calcunt(cat)}} Calories</div> -->
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <!-- <div *ngIf="displydatas == '1'">
+          <div *ngFor="let f of c.food;let i=index;">
+            <ion-row style="padding: 6px;" (click)="detail(f)">
+              <ion-col size="3" class="ion-no-padding">
+                <img src="{{config.imgapi}}{{f.icon}}" class="foodimgs">
+              </ion-col>
+              <ion-col size="8">
+                <div class="foodname">{{f.name}}</div>
+                <div style="color: gray;font-size: 14px;">{{f.time}}</div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div> -->
+
+        <div *ngIf="displydata == '1'">
+          <div *ngFor="let f of c.food;">
+            <div *ngFor="let d of datedata;">
+              <ion-row style="padding: 6px;" *ngIf="f.id == d.food">
+                <ion-col size="3" class="ion-no-padding"  (click)="detail(d)">
+                  <img src="{{config.imgapi}}{{d.photo}}" class="foodimgs">
+                </ion-col>
+                <ion-col size="4"  (click)="detail(d)">
+                  <div class="foodname">{{d.name}}</div>
+                  <div style="color: gray;font-size: 14px;">{{timerset(d.time)}}</div>
+                </ion-col>
+                <ion-col size="4"  (click)="editfood_details(d)">
+                  <div class="foodname">Edit</div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+
+
+      <!-- <ion-row>
+        <ion-col size="5.5">
+          <div class="titlehednm">Early Morning</div>
+        </ion-col>
+        <ion-col size="2">
+          <div class="roundclass vertical_centr">
+            <ion-icon name="add-outline" class="ellipsecls"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="4.5" style="text-align: right;">
+          <div style="font-size: 13px;color: gray;">230 calories</div>
+        </ion-col>
+      </ion-row>
+
+      <div class="ht_20"></div> -->
+      <!-- <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/coffee.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Coffee</div>
+          <div style="color: gray;font-size: 12px;">06:30am</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_10"></div> -->
+      <!-- 
+      <ion-row>
+        <ion-col size="5.5">
+          <div class="titlehednm">Breakfast</div>
+        </ion-col>
+        <ion-col size="2">
+          <div class="roundclass vertical_centr">
+            <ion-icon name="add-outline" class="ellipsecls"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="4.5" style="text-align: right;">
+          <div style="font-size: 13px;color: gray;">2 meals 140 calories|</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/milk.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Milk</div>
+          <div style="color: gray;font-size: 12px;">09:00pm</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_10"></div>
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/orange.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Orange</div>
+          <div style="color: gray;font-size: 12px;">09:00pm</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_20"></div>
+
+
+      <ion-row>
+        <ion-col size="5.5">
+          <div class="titlehednm">Mid-Morning</div>
+        </ion-col>
+        <ion-col size="2">
+          <div class="roundclass vertical_centr">
+            <ion-icon name="add-outline" class="ellipsecls"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="4.5" style="text-align: right;">
+          <div style="font-size: 13px;color: gray;">2 meals | 140 calories</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/milk.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Milk</div>
+          <div style="color: gray;font-size: 12px;">12:00pm</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_10"></div>
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/orange.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Orange</div>
+          <div style="color: gray;font-size: 12px;">12:00pm</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_20"></div>
+
+
+      <ion-row>
+        <ion-col size="5.5">
+          <div class="titlehednm">Lunch</div>
+        </ion-col>
+        <ion-col size="2">
+          <div class="roundclass vertical_centr">
+            <ion-icon name="add-outline" class="ellipsecls"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="4.5" style="text-align: right;">
+          <div style="font-size: 13px;color: gray;">2 meals | 120 calories</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/milk.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Milk</div>
+          <div style="color: gray;font-size: 12px;">02:10pm</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_10"></div>
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/orange.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Orange</div>
+          <div style="color: gray;font-size: 12px;">02:10pm</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_20"></div>
+
+      <ion-row>
+        <ion-col size="5.5">
+          <div class="titlehednm">Evening</div>
+        </ion-col>
+        <ion-col size="2">
+          <div class="roundclass vertical_centr">
+            <ion-icon name="add-outline" class="ellipsecls"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="4.5" style="text-align: right;">
+          <div style="font-size: 13px;color: gray;">2 meals | 120 calories</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/milk.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Milk</div>
+          <div style="color: gray;font-size: 12px;">05:10pm</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_10"></div>
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/orange.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Orange</div>
+          <div style="color: gray;font-size: 12px;">05:10pm</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_20"></div>
+
+      <ion-row>
+        <ion-col size="5.5">
+          <div class="titlehednm">Dinner</div>
+        </ion-col>
+        <ion-col size="2">
+          <div class="roundclass vertical_centr">
+            <ion-icon name="add-outline" class="ellipsecls"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="4.5" style="text-align: right;">
+          <div style="font-size: 13px;color: gray;">Not added</div>
+        </ion-col>
+      </ion-row>
+
+      <div class="ht_20"></div>
+
+      <ion-row>
+        <ion-col size="5.5">
+          <div class="titlehednm">Bed time</div>
+        </ion-col>
+        <ion-col size="2">
+          <div class="roundclass vertical_centr">
+            <ion-icon name="add-outline" class="ellipsecls"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="4.5" style="text-align: right;">
+          <div style="font-size: 13px;color: gray;">Not added</div>
+        </ion-col>
+      </ion-row> -->
+      <div class="ht_50"></div>
+      <div *ngIf="cal != ''" >
+      <ion-row>
+        <ion-col>
+          <div class="titlehednm">Today Meal Butritions</div>
+        </ion-col>
+      </ion-row>
+      <div class="ht_20"></div>
+      <div>
+        <ion-card style="color: aliceblue;border-radius: 10px;">
+          <ion-row style="width:90%;margin:auto">
+            <ion-col size="4" style="color:black;margin: auto;">
+              Energy
+            </ion-col>
+            <ion-col size="4" style="margin: auto;">
+              <img src="assets/imgs/kal.png">
+            </ion-col>
+            <ion-col size="4" style="color: gray;font-size: 12px;
+            margin: auto;text-align: right;">
+              {{cal}} kCal
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="quizz-progress ion-text-center">
+                <ion-progress-bar value="{{cal}}"></ion-progress-bar>
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="ht_10"></div>
+        </ion-card>
+      </div>
+      <div>
+        <ion-card style="border-radius: 10px;background-color: #fff;">
+          <ion-row style="width:90%;margin:auto">
+            <ion-col size="4" style="color:black;margin: auto;">
+              Proteins
+            </ion-col>
+            <ion-col size="4" style="margin: auto;">
+              <img style="height: 28px;" src="assets/imgs/prot.png">
+            </ion-col>
+            <ion-col size="4" style="color: gray;font-size: 12px;
+            margin: auto;text-align: right;">
+              {{prot}} g
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="quizz-progress ion-text-center">
+                <ion-progress-bar value="{{prot}}"></ion-progress-bar>
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="ht_10"></div>
+        </ion-card>
+      </div>
+      <div>
+        <ion-card style="border-radius: 10px;background-color: #fff;">
+          <ion-row style="width:90%;margin:auto">
+            <ion-col size="4" style="color:black;margin: auto;">
+              Fats
+            </ion-col>
+            <ion-col size="4" style="margin: auto;">
+              <img style="height: 28px;" src="assets/imgs/eg.jpg">
+            </ion-col>
+            <ion-col size="4" style="color: gray;font-size: 12px;
+            margin: auto;text-align: right;">
+              {{fat}} g
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="quizz-progress ion-text-center">
+                <ion-progress-bar value="{{fat}}"></ion-progress-bar>
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="ht_10"></div>
+        </ion-card>
+      </div>
+      <div>
+        <ion-card style="border-radius: 10px;background-color: #fff;">
+          <ion-row style="width:90%;margin:auto">
+            <ion-col size="4" style="color:black;margin: auto;">
+              Carbo
+            </ion-col>
+            <ion-col size="4" style="margin: auto;">
+              <img style="height: 28px;" src="assets/imgs/carbo.png">
+            </ion-col>
+            <ion-col size="4" style="color: gray;font-size: 12px;
+            margin: auto;text-align: right;">
+              {{crbo}} g
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="quizz-progress ion-text-center">
+                <ion-progress-bar value="{{crbo}}"></ion-progress-bar>
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="ht_10"></div>
+        </ion-card>
+      </div>
+      <div>
+        <ion-card style="border-radius: 10px;background-color: #fff;">
+          <ion-row style="width:90%;margin:auto">
+            <ion-col size="4" style="color:black;margin: auto;">
+              Iron
+            </ion-col>
+            <ion-col size="4" style="margin: auto;">
+              <img style="height: 28px;" src="assets/imgs/carbo.png">
+            </ion-col>
+            <ion-col size="4" style="color: gray;font-size: 12px;
+            margin: auto;text-align: right;">
+              {{ironss}} ng
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="quizz-progress ion-text-center">
+                <ion-progress-bar value="{{ironss}}"></ion-progress-bar>
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="ht_10"></div>
+        </ion-card>
+      </div> 
+
+
+      <div>
+        <ion-card style="border-radius: 10px;background-color: #fff;">
+          <ion-row style="width:90%;margin:auto">
+            <ion-col size="4" style="color:black;margin: auto;">
+              Fiber
+            </ion-col>
+            <ion-col size="4" style="margin: auto;">
+              <img style="height: 28px;" src="assets/imgs/carbo.png">
+            </ion-col>
+            <ion-col size="4" style="color: gray;font-size: 12px;
+            margin: auto;text-align: right;">
+              {{fiber}} g
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div class="quizz-progress ion-text-center">
+                <ion-progress-bar value="{{fiber}}"></ion-progress-bar>
+              </div>
+            </ion-col>
+          </ion-row>
+          <div class="ht_10"></div>
+        </ion-card>
+      </div> 
+
+
+      
+
+
+    </div>
+  </div>
+  
+  
+  </div>
+</ion-content>

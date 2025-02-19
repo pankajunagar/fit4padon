@@ -1,0 +1,89 @@
+.backarrow{
+    color: #000;
+    font-size: 18px;
+    margin-left: 24px;
+}
+.heaertitle{
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+}
+.listpadd{
+    padding: 0 20px;
+}
+.cameraicon{
+    font-size: 48px;
+    color: #c0c0c0;
+    padding-right: 10px;
+}
+.itemclass{
+    background: #f7f8f8;
+    --background: #f7f8f8;
+    border-radius: 50px;
+    --border-radius: 50px;
+}
+.textaitemclass{
+    background: #f7f8f8;
+    --background: #f7f8f8;
+    border-radius: 20px;
+    --border-radius: 20px;
+    padding: 12px 0;
+}
+.iconcls{
+    font-size: 18px;
+    margin: 0px 10px 0px 0px;
+    color: #afafaf;
+}
+.ioninput{
+    background: #f7f8f8;
+    --background: #f7f8f8;
+    border-radius: 50px;
+    --border-radius: 50px;
+    font-size: 14px;
+    --font-size: 14px;
+    --padding-start: 8px;
+    width: 100%;
+}
+.toglebtn{
+    --handle-background-checked: #fff;
+    --background-checked: #ff9a98;
+    width: 40px;
+    height: 24px;
+    --handle-width: 18px;
+    --handle-height: 18px;
+}
+.textariya{
+    margin: 0px !important;
+    --padding-top:0px;
+    border-radius: 2px;
+    --border-radius: 2px;
+    --padding-start: 8px !important;
+}
+.Submitbtn{
+    text-transform: none;
+    --text-transform: none;
+    background: #ff9a98;
+    --background: #ff9a98;
+    color: #fff;
+    --color: #fff;
+    font-size: 16px;
+    --font-size: 16px;
+    border-radius: 50px;
+    --border-radius: 50px;
+    box-shadow: none;
+    --box-shadow: none;
+    font-weight: 500;
+    --font-weight: 500;
+    height: 40px;
+    --height: 40px;
+    width: 40%;
+    --width: 40%;
+    margin: auto;
+    display: table;
+}
+.profileimg {
+    border-radius: 15px;
+    margin: auto;
+    width: 34%;
+  }

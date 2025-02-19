@@ -1,0 +1,103 @@
+<ion-content class="fullback">
+
+  <div class="maindiv">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_45"></div>
+      <ion-row>
+        <ion-col size="3" class="vertical_centr" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+          <div class="heaertitle">Diet History</div>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <div class="ht_60"></div>
+      <div class="listpadd" *ngIf="!graphicsdata">
+        <ion-row>
+          <ion-col>
+            <div class="clidename"  style="text-align: center;"> Diet History not added ..</div>
+          </ion-col>
+          <!-- <ion-col (click)="detailopen('0')" size="1" class="ion-no-padding vertical_centrC">
+            <div class="roundclass vertical_centr">
+              <ion-icon name="ellipse" class="ellipsecls"></ion-icon>
+            </div>
+          </ion-col> -->
+        </ion-row>
+      </div>
+
+      <div class="listpadd" *ngFor="let c of graphicsdata;let i = index;">
+        <ion-row>
+          <ion-col size="3" class="ion-no-padding">
+            <img *ngIf="c.image == ''" src="assets/imgs/child.png" class="childimgs">
+            <img *ngIf="c.image != ''" src="{{config.api}}{{c.image}}" class="childimgs">
+          </ion-col>
+          <ion-col size="7">
+            <div class="clidename">{{c.name}}</div>
+            <div class="clidedetail" *ngIf="c.detail1 != null">{{chkyear(c.dob)}} yrs | H:{{c.detail1.height}} |
+              W:{{c.detail1.weight}}</div>
+          </ion-col>  
+          <ion-col size="1" class="ion-no-padding vertical_centrC" (click)="detailopen(c)">
+            <div class="roundclass vertical_centr">
+              <ion-icon name="ellipse" class="ellipsecls"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col size="1" class="ion-no-padding vertical_centrC"  (click)="detailopen(c)">
+            <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <div *ngFor="let d of diet">
+          <div *ngIf="d.child_id == c.id">
+            <div class="detaildiv">wake time: {{d.wakeup_time}} am</div>
+            <div style="color: red;float: right;"  (click)="deletediet(d.id)">Delete</div>
+            <div class="detaildiv">bed time: {{d.bed_time}} pm</div>
+            <div class="detaildiv">Type of diet: {{d.diet_type}}</div>
+            <!--<div class="detaildiv">Food allergies: {{d.food_allergies}}</div>-->
+            <div class="detaildiv">Details:{{d.detail}}</div>
+            <div class="ht_5"><hr></div>
+            
+
+
+          </div>
+          <div class="ht_1"><hr></div>
+        </div>
+        <div class="ht_1"></div>
+
+
+        <div class="ht_5"></div>
+        <!-- <ion-row (click)="detailopen()">
+          <ion-col size="3" class="ion-no-padding">
+            <img src="assets/imgs/child.png" class="childimgs">
+          </ion-col>
+          <ion-col size="7">
+            <div class="clidename">Radha shiva</div>
+            <div class="clidedetail">13 yrs | H:110 | W:64</div>
+          </ion-col>
+          <ion-col size="1" class="ion-no-padding vertical_centrC">
+            <div class="roundclass vertical_centr">
+              <ion-icon name="ellipse" class="ellipsecls"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col size="1" class="ion-no-padding vertical_centrC">
+            <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <div class="ht_10"></div>
+
+        <div>
+          <div class="detaildiv">wake time: 06.00 am</div>
+          <div class="detaildiv">bed time: 09.00 pm</div>
+          <div class="detaildiv">Type of diet: Non Veg</div>
+          <div class="detaildiv">Food allergies: Yes</div>
+          <div class="detaildiv">Details: Fish food allergies skin issues</div>
+        </div> -->
+
+        <div class="ht_25"></div>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

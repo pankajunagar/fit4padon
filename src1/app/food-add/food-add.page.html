@@ -1,0 +1,183 @@
+<ion-content class="fullback">
+
+  <div class="maindiv">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_45"></div>
+      <ion-row>
+        <ion-col size="3" class="vertical_centr" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+          <div class="heaertitle">Food Add details</div>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <div class="ht_50"></div>
+    </div>
+
+    <div class="listpadd">
+      <div class="titlehednm">Select Date</div>
+      <div class="ht_20"></div>
+      <ion-row class="listpadd">
+        <ion-col size="3" class="vertical_centr">
+          <div class="datebuttonback vertical_centr" (click)="DateChange(-1)">
+            <ion-icon name="play-outline" class="datenext dateback"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="6" class="ion-no-padding vertical_centr">
+          <div class="fridejune">{{Dateshow}}</div>
+        </ion-col>
+        <ion-col size="3" class="vertical_centr">
+          <div class="datebuttonback vertical_centr" (click)="DateChange(+1)">
+            <ion-icon name="play-outline" class="datenext"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <div class="datenormals">
+            <div class="dyvday">{{dayago}}</div>
+            <div class="dyvdate">{{mindate}}</div>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="datemailsiv">
+            <div class="dyvday">{{datedis}}</div>
+            <div class="dyvdate">{{datedi}}</div>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="datenormals">
+            <div class="dyvday">{{dayafter}}</div>
+            <div class="dyvdate">{{maxdate}}</div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <div class="ht_20"></div>
+      <div class="titlehednm">Select Time</div>
+      <div class="ht_20"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-datetime [(ngModel)]="ftime" placeholder="Select time" presentation="time" class="timepicker"
+          displayFormat="h mm A" pickerFormat="h mm A">x
+        </ion-datetime>
+        <!-- <ion-datetime display-format="HH:mm" class="timepicker" placeholder="Select time" [min]="minimum"
+          presentation="time" value="{{currentDate}}"></ion-datetime> -->
+      </ion-item>
+      <div class="ht_20"></div>
+      <div class="titlehednm">Select Food</div>
+      <div class="ht_20"></div>
+      <div *ngIf="food_data.food == ''" style="text-align: center;color: gray;font-size: 18px;">Not any Data</div>
+      <ion-radio-group *ngIf="!alldata">
+        <ion-row *ngFor="let f of food;let i=index;" style="padding: 6px;">
+          <ion-col (click)="detail(f)" size="3" class="ion-no-padding">
+            <img src="{{config.imgapi}}{{f.icon}}" class="foodimgs">
+          </ion-col>
+          <ion-col size="8" (click)="detail(f)">
+            <div class="foodname">{{f.name}}</div>
+            <!-- <div style="color: gray;font-size: 12px;">{{f.nutrition}}</div>   -->
+            <div style="color: gray;font-size: 12px;">{{f.food_weight}}</div>
+          </ion-col>
+          <ion-col size="1" class="ion-no-padding vertical_centrC">
+            <!-- <ion-checkbox (click)="chk(f.id)"></ion-checkbox> -->
+            <ion-radio (click)="chk(f.id)"></ion-radio>
+          </ion-col>
+        </ion-row>
+      </ion-radio-group>
+
+      <ion-radio-group *ngIf="alldata" value="selectdata">
+        <ion-row style="padding: 6px;">
+          <ion-col size="3" class="ion-no-padding">
+            <img src="{{config.imgapi}}{{alldata.icon}}" class="foodimgs">
+          </ion-col>
+          <ion-col size="8">
+            <div class="foodname">{{alldata.name}}</div>
+            <div style="color: gray;font-size: 12px;">{{alldata.nutrition}}</div>
+            <div style="color: gray;font-size: 12px;">{{alldata.food_weight}}</div>
+          </ion-col>
+          <ion-col size="1" class="ion-no-padding vertical_centrC">
+            <!-- <ion-checkbox (click)="chk(f.id)"></ion-checkbox> -->
+            <ion-radio value="selectdata"></ion-radio>
+          </ion-col>
+        </ion-row>
+      </ion-radio-group>
+      <!-- <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/coffee.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Coffee</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_10"></div>
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/milk.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Milk</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div class="ht_10"></div>
+      <ion-row>
+        <ion-col size="3" class="ion-no-padding">
+          <img src="assets/imgs/orange.png" class="foodimgs">
+        </ion-col>
+        <ion-col size="8" (click)="detail()">
+          <div class="foodname">Orange</div>
+        </ion-col>
+        <ion-col size="1" class="ion-no-padding vertical_centrC">
+          <ion-icon name="play-circle-outline" class="playcercul"></ion-icon>
+        </ion-col>
+      </ion-row> -->
+      <div class="ht_20"></div>
+      <ion-row>
+        <ion-col size="12" style="border: 1px solid #e7e3e3;
+        border-radius: 18px;
+        background-color: #e7e7e7;">
+          <ion-textarea style="border: 1px solid #e7e3e3;
+            border-radius: 18px;
+            background-color: #e7e7e7;" [(ngModel)]="other_foods" placeholder="Type something here"></ion-textarea>
+        
+        </ion-col>
+      </ion-row>
+
+
+      <div class="ht_20"></div>
+      <div *ngIf="!Myimage">
+        <ion-icon name="camera-outline" class="cameraicon" (click)="selectImage()"></ion-icon>
+      </div>
+      <div *ngIf="Myimage">
+        <img src="{{config.api}}{{Myimage}}" class="profileimg">
+      </div>
+      <div class="ht_10"></div>
+      <div class="ht_20"></div>
+      <div class="ht_20"></div>
+      <div class="titlehednm">Add   </div>
+      <div class="ht_20"></div>
+
+      <ion-row>
+        <ion-col size="8" style="border: 1px solid #e7e3e3;
+        border-radius: 18px;
+        background-color: #e7e7e7;">
+          <ion-input [(ngModel)]="qty" type="text"></ion-input>
+        </ion-col>
+        <ion-col size="4" (click)="add()" *ngIf="!alldata">
+          <ion-button class="fm">Add</ion-button>
+        </ion-col>
+        <ion-col size="4" (click)="editfood_details()" *ngIf="alldata">
+          <ion-button class="fm">Edit</ion-button>
+        </ion-col>
+      </ion-row>
+
+    </div>
+    <div class="ht_20"></div>
+  </div>
+</ion-content>

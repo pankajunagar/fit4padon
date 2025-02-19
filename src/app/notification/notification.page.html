@@ -1,0 +1,50 @@
+<ion-content class="fullback">
+
+  <div class="maindiv" style="height:100%">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_45"></div>
+      <ion-row>
+        <ion-col size="3" class="vertical_centr" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+          <div class="heaertitle">Notification</div>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <div class="ht_60"></div>
+
+      <div class="listpadd">
+        <ion-row *ngIf="displydata == '0'">
+          <ion-col size="12" (click)="earlymorning()">
+            <div class="clidename">Reminder!</div>
+            <div class="clidedetail">Update your food details</div>
+            <div class="borderdiv"></div>
+          </ion-col>
+        </ion-row> 
+        <ion-row *ngFor="let n of noti">
+          <!-- <ion-col size="3" class="ion-no-padding"> -->
+            <!-- <img src="assets/imgs/child.png" class="childimgs"> -->
+          <!-- </ion-col> -->
+          <ion-col size="12">
+            <div class="clidename">{{n.message}}</div>
+            <div class="clidedetail">{{n.created_date}}</div>
+            <div class="borderdiv"></div>
+          </ion-col>
+        </ion-row>
+        <div class="ht_5"></div>
+        <!-- <ion-row>
+          <ion-col size="3" class="ion-no-padding">
+            <img src="assets/imgs/child.png" class="childimgs">
+          </ion-col>
+          <ion-col size="9">
+            <div class="clidename">New video added </div>
+            <div class="clidedetail">About 3 hours ago</div>
+          </ion-col>
+        </ion-row> -->
+      </div>
+    </div>
+  </div>
+</ion-content>

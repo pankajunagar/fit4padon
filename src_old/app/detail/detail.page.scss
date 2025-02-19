@@ -1,0 +1,22 @@
+.vertical_centr1{
+
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    margin-left: 5%;
+    border-radius: 50px;
+}   
+
+.title{
+    font-weight: bold;
+   
+    margin-top: 10%;
+}
+.subtitle{
+    margin-top: 10%;
+}
+
+.add{float: right; margin-right: 5%; margin-top: 2%;}
+
+.roundbox{background-color: #eaeeff; border-radius: 21px; text-align: center; padding: 4%;}

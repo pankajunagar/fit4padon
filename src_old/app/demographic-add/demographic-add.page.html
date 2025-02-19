@@ -1,0 +1,134 @@
+<ion-content class="fullback">
+
+  <div class="maindiv">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_45"></div>
+      <ion-row>
+        <ion-col size="3" class="vertical_centr" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+          <div class="heaertitle">Demographic Data</div>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <div class="ht_60"></div>
+    </div>
+
+    <div class="listpadd ion-text-right" *ngIf="!Myimage">
+      <ion-icon name="camera-outline" class="cameraicon" (click)="selectImage()"></ion-icon>
+    </div>
+    <div class="listpadd ion-text-right" *ngIf="Myimage">
+      <img src="{{config.imgapi}}{{Myimage}}" class="profileimg">
+    </div>
+    <div class="ht_10"></div>
+   
+    <div class="ht_10"></div>
+    <div class="listpadd">
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="person-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-input [(ngModel)]="name" class="ioninput" placeholder="Name" type="text"></ion-input>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="calendar-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-datetime [(ngModel)]="dob" class="ioninput" placeholder="Date of Birth" type="text"></ion-datetime>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="people-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Choose Gender" [(ngModel)]="gender">
+          <ion-select-option value="Male">Male</ion-select-option>
+          <ion-select-option value="Female">Female</ion-select-option>
+          <ion-select-option value="Other">Other</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Education">
+          <ion-select-option value="School">School</ion-select-option>
+          <ion-select-option value="College">College</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Parent occupation" [(ngModel)]="parent_occupation">
+          <ion-select-option value="Drive">Drive</ion-select-option>
+          <ion-select-option value="Teacher">Teacher</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Education of the family head" [(ngModel)]="education_family_head">
+          <ion-select-option value="School">School</ion-select-option>
+          <ion-select-option value="College">College</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Monthly income of the family" [(ngModel)]="monthly_income">
+          <ion-select-option value="5k">Below 5k</ion-select-option>
+          <ion-select-option value="10k">Below 10k</ion-select-option>
+          <ion-select-option value="15k">Below 15k</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-label style="color:#afafaf;font-size:14px;padding-left:8px;">Default Toggle</ion-label>
+        <ion-toggle slot="end" [checked]="true" class="toglebtn"></ion-toggle>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="textaitemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-textarea [(ngModel)]="history_cancer" class="ioninput textariya" placeholder="Details" type="text"
+          rows="6"></ion-textarea>
+      </ion-item>
+
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Type of treatment" [(ngModel)]="type_of_treatment">
+          <ion-select-option value="Radiotherapy">Radiotherapy</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-select class="ioninput" placeholder="Menstrual status" [(ngModel)]="menstrual_status">
+          <ion-select-option value="Low">Low</ion-select-option>
+          <ion-select-option value="Normal">Normal</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="ht_10"></div>
+      <ion-item class="textaitemclass" lines="none">
+        <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-textarea class="ioninput textariya" placeholder="Details" type="text" rows="6"></ion-textarea>
+      </ion-item>
+
+      <div class="ht_20"></div>
+
+      <ion-button class="Submitbtn" (click)="submit()">Submit</ion-button>
+
+      <div class="ht_50"></div>
+    </div>
+
+  </div>
+</ion-content>

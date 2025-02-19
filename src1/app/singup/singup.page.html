@@ -1,0 +1,68 @@
+<ion-content class="fullback">
+
+  <div class="ht100ps maindiv">
+
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div class="divtop1">
+      <div class="heythere"> Hey There, </div>
+      <div class="welcomebc"> Create an Account </div>
+    </div>
+
+    <div class="ht_30"></div>
+
+    <div class="paddiv">
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="mail-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-input class="ioninput" [(ngModel)]="firstname" placeholder="First Name" type="text"></ion-input>
+      </ion-item>
+      <div class="ht_20"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="mail-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-input class="ioninput"  [(ngModel)]="lastname" placeholder="Last Name" type="text"></ion-input>
+      </ion-item>
+      <div class="ht_20"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="mail-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-input class="ioninput" [(ngModel)]="email" placeholder="Email" type="text"></ion-input>
+      </ion-item>
+      <div class="ht_20"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="mail-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-input class="ioninput" [(ngModel)]="mobile" placeholder="Mobile" type="number"></ion-input>
+      </ion-item>
+      <div class="ht_20"></div>
+      <ion-item class="itemclass" lines="none">
+        <ion-icon name="lock-closed-outline" slot="start" class="iconcls"></ion-icon>
+        <ion-input class="ioninput" [(ngModel)]="password" placeholder="Password" type="password"></ion-input>
+      </ion-item>
+      <div class="ht_20"></div>
+      
+    </div>
+
+    <div class="bottomdiv">
+      <div>
+        <ion-button class="loginbtn" (click)="register()">Register</ion-button>
+      </div>
+
+      <div class="vertical_centr">
+        <div class="borderdiv"></div>
+        <div class="ordiv vertical_centr">Or</div>
+      </div>
+
+      <ion-row>
+        <ion-col size="6" (click)="googleLogin()">
+          <img src="assets/imgs/google.png" class="googlelogo">
+        </ion-col>
+        <ion-col size="6" (click)="fblogin()">
+          <img src="assets/imgs/facebook.png" class="facebooklogo">
+        </ion-col>
+      </ion-row>
+      <div class="ht_20"></div>
+      <div class="dontaccount" (click)="Loggin()">Already have an account? <span style="color: #b67be7;"> Login</span> </div>
+      <div class="ht_40"></div>
+    </div>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-content class="fullback">
+
+  <div class="maindiv" style="height:100%">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_45"></div>
+      <ion-row>
+        <ion-col size="3" class="vertical_centr" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+          <div class="heaertitle">Gallery</div>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <div class="ht_60"></div>
+      <div class="heaer-title">Image Gallery</div>
+      <div class="listpadd">
+        <ion-row>
+          <ion-col size="6" *ngFor="let img of images" style="margin: auto;text-align: center;">
+            <img src="{{config.imgpdf}}{{img.url}}" class="childimgs">
+          </ion-col>
+        </ion-row>
+      </div>
+
+
+      <div class="ht_20"></div>
+      <div class="heaer-title">Video Gallery</div>
+      <!-- <div class="listpadd">
+        <ion-row>
+          <ion-col size="6" *ngFor="let v of videos" style="margin: auto;text-align: center;">
+            <video autoplay controls="controls" preload="metadata" webkit-playsinline="webkit-playsinline"
+              style="width: 100%;height: fit-content;">
+              <source src="{{config.imgapi}}{{v.url}}" type="video/mp4" />
+            </video>
+          </ion-col>
+        </ion-row>
+      </div> -->
+
+      <div style="overflow-x:auto;">
+        <table>
+          <tr>
+            <td *ngFor="let v of videos">
+              <div class="videocarddiv">
+                <video *ngIf="v.type == '1'" controls="controls" preload="metadata"
+                  webkit-playsinline="webkit-playsinline" style="width: 100%;height: fit-content;">
+                  <source src="{{config.imgapi}}{{v.url}}" type="video/mp4" />
+                </video>
+                <iframe *ngIf="v.type == '2'" style="width: 100%;height: fit-content;" frameborder="0" allowfullscreen
+                  [src]="updateVideoUrl(v.url)"></iframe>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

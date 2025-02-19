@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "792731821779",
+    "project_id": "ccsproject-f288a",
+    "storage_bucket": "ccsproject-f288a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792731821779:android:646d5b31d1ca9e63c19626",
+        "android_client_info": {
+          "package_name": "app.ccs.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792731821779-d9lp8qi9dbosfh3568a1mbkv0dlgf1oo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxIW9wl8f_DaBOYmgOy4cK3BdZiV_9I5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792731821779-d9lp8qi9dbosfh3568a1mbkv0dlgf1oo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

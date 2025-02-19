@@ -1,0 +1,76 @@
+<ion-content class="fullback">
+
+  <div class="maindiv" style="height:100%">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_45"></div>
+      <ion-row>
+        <ion-col size="3" class="vertical_centr" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+          <div class="heaertitle">Anthropometry Data</div>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <div class="ht_60"></div>
+
+      <div class="listpadd">
+        <ion-row (click)="detailopen()">
+          <ion-col size="3" class="ion-no-padding">
+            <img *ngIf="data.image == ''" src="assets/imgs/child.png" class="childimgs">
+            <img *ngIf="data.image != ''" src="{{config.api}}{{data.image}}" class="childimgs">
+
+          </ion-col>
+          <ion-col size="8" class="vertical_centrC">
+            <div class="clidename">{{data.name}}</div>
+          </ion-col>
+          <ion-col size="1"></ion-col>
+        </ion-row>
+
+        <div class="ht_20"></div>
+        <div class="listpadd">
+          <ion-row class="listpadd">
+            <ion-col size="3" class="vertical_centr">
+              <div class="datebuttonback vertical_centr" (click)="DateChange(-1)">
+                <ion-icon name="play-outline" class="datenext dateback"></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col size="6" class="ion-no-padding vertical_centr">
+              <div class="fridejune">{{Dateshow}}</div>
+            </ion-col>
+            <ion-col size="3" class="vertical_centr">
+              <div class="datebuttonback vertical_centr" (click)="DateChange(+1)">
+                <ion-icon name="play-outline" class="datenext"></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+        <div class="ht_20"></div>
+
+        <div class="detaildiv">Name:{{data.name}}</div>
+        <div class="detaildiv">Date of Birth:{{data.dob}}</div>
+        <div class="detaildiv">Gender: {{data.gender}}</div>
+        
+        <div *ngIf="displydata == '1' && disdata">
+          <div class="detaildiv">Height: {{disdata.height}}(cm)</div>
+          <div class="detaildiv">Weight:{{disdata.weight}} (kg)</div>
+          <div class="detaildiv">BMI Result: BMI={{disdata.bmi}} kg/m2</div>
+          <div class="detaildiv">Healthy weight for the height: {{disdata.healthy_weight_for_height}}</div>
+          <!-- <div class="detaildiv">Ponderal Index:{{disdata.ponderal_index}}</div> -->
+          <div class="detaildiv">Waist circumference:{{disdata.waist_circumference}}</div>
+          <div class="detaildiv">Hip circumference: {{disdata.hip_circumference}}</div>
+          <div class="detaildiv">Waist hip ratio: {{disdata.waist_hip_ratio}}</div>
+          <div class="detaildiv">MAC: {{disdata.mac}}</div>
+          <div class="detaildiv">TSFC: {{disdata.tsfc}}</div>
+          <div class="detaildiv">Goal: {{disdata.goal}}</div>
+          <!-- <div class="detaildiv">Lose 11.6 kgs to reach a BMI of 25 kg/m2.</div> -->
+          <!-- <div class="detaildiv">Healthy BMI range: 18.5 kg/m2 - 25 kg/m2</div> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

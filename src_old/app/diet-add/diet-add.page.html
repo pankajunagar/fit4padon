@@ -1,0 +1,84 @@
+<ion-content class="fullback">
+
+  <div class="maindiv" style="height:100%">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_45"></div>
+      <ion-row>
+        <ion-col size="3" class="vertical_centr" (click)="backbutton()">
+          <ion-icon name="chevron-back-outline" class="backarrow"></ion-icon>
+        </ion-col>
+        <ion-col size="6">
+          <div class="heaertitle">Diet History</div>
+        </ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+      <div class="ht_50"></div>
+
+      <div class="listpadd">
+        <ion-row (click)="detailopen()">
+          <ion-col size="3" class="ion-no-padding">
+            <img src="assets/imgs/child.png" class="childimgs">
+          </ion-col>
+          <ion-col size="8">
+            <div class="clidename">Radha shiva</div>
+            <div class="clidedetail">13 yrs | H:110 | W:64</div>
+          </ion-col>
+          <ion-col size="1">
+
+          </ion-col>
+        </ion-row>
+        <div class="ht_25"></div>
+        <div class="listpadd">
+          <div class="listpadd">
+
+            <div class="titleHed">Wake up Time</div>
+            <div class="ht_15"></div>
+            <ion-item class="itemclass" lines="none">
+              <ion-datetime class="timepicker" placeholder="3 30 PM" displayFormat="h mm A" pickerFormat="h mm A">
+              </ion-datetime>
+            </ion-item>
+            <div class="ht_25"></div>
+
+            <div class="titleHed">Bed Time</div>
+            <div class="ht_15"></div>
+            <ion-item class="itemclass" lines="none">
+              <ion-datetime class="timepicker" placeholder="3 30 PM" displayFormat="h mm A" pickerFormat="h mm A">
+              </ion-datetime>
+            </ion-item>
+          </div>
+
+          <div class="ht_20"></div>
+          <div style="padding-left:5px;">
+
+            <ion-item class="itemclass" lines="none">
+              <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+              <ion-select class="ioninput" placeholder="Diet Type">
+                <ion-select-option value="Non Veg">Non Veg</ion-select-option>
+                <ion-select-option value="Veg">Veg</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <div class="ht_10"></div>
+            <ion-item class="itemclass" lines="none">
+              <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+              <ion-label style="color:#afafaf;font-size:14px;padding-left:8px;">Default Toggle</ion-label>
+              <ion-toggle slot="end" [checked]="true" class="toglebtn"></ion-toggle>
+            </ion-item>
+            <div class="ht_10"></div>
+            <ion-item class="textaitemclass" lines="none">
+              <ion-icon name="grid-outline" slot="start" class="iconcls"></ion-icon>
+              <ion-textarea class="ioninput textariya" placeholder="Details" type="text" rows="4"></ion-textarea>
+            </ion-item>
+            <div class="ht_20"></div>
+
+            <ion-button class="Submitbtn">Submit</ion-button>
+            <div class="ht_10"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>

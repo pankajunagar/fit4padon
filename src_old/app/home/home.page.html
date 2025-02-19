@@ -1,0 +1,142 @@
+<ion-content class="fullback">
+
+  <div class="maindiv">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_20"></div>
+           <img src="assets/imgs/dot.png" class="dotlogos" alt="" (click)="notification()">
+      <div class="ht_10"></div>
+
+      <div class="pagepadd">
+        <div class="wecomdiv">welcome,</div>
+        <div class="username">Siva Sankar</div>
+        <div class="ht_30"></div>
+      </div>
+
+      <div class="listpadd">
+        <div class="cildwood">Childhood Cancer Survivors</div>
+        <div class="ht_20"></div>
+         <div class="fm" (click)="fmonitoring()">Food Morning</div>
+        <div class="ht_20"></div>
+
+        <div *ngFor="let x of data">
+          <ion-row class="MaincardRow">
+            <ion-col size="7">
+              <div class="Demographic">{{x.name}}</div>
+              <div class="namedetail">{{x.user}}</div>
+              <ion-button fill="clear" class="vivemore" (click)="demographic(x.id)">View more</ion-button>
+            </ion-col>
+            <ion-col size="5" class="vertical_centr">
+              <img src="{{x.imgs}}" class="demoimg" alt="">
+            </ion-col>
+          </ion-row>
+          <div class="ht_20"></div>
+        </div>
+
+        <ion-row class="MaincardRow">
+          <ion-col size="6" class="vertical_centrC">
+            <div class="deitephic">Diet History</div>
+          </ion-col>
+
+          <ion-col size="6">
+            <div class="ckeckBtn" (click)="DietHistrory()">Check</div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="ht_30"></div>
+
+      <div class="scrollxpadd">
+        <div class="cildwood">Food Monitoring</div>
+        <div class="ht_20"></div>
+        <div style="overflow-x:auto;">
+          <table>
+            <tr>
+              <td>
+                <div class="maincarddiv">
+                  <img src="assets/imgs/demografy.png" class="foodimgs">
+                  <div class="earlymorning">Early Morning</div>
+                  <div class="choicesdiv">30+ Choices</div>
+                  <div class="selectBtn" (click)="FoodAdd()">Select</div>
+                  <div class="ht_10"></div>
+                </div>
+              </td>
+              <td>
+                <div class="maincarddiv">
+                  <img src="assets/imgs/demografy.png" class="foodimgs">
+                  <div class="earlymorning">Early Morning</div>
+                  <div class="choicesdiv">30+ Choices</div>
+                  <div class="selectBtn" (click)="FoodAdd()">Select</div>
+                  <div class="ht_10"></div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="ht_30"></div>
+
+      <div class="scrollxpadd">
+        <div class="cildwood"  (click)="gallery()">Video Gallery</div>
+
+        <div class="ht_20"></div>
+
+        <div style="overflow-x:auto;">
+          <table>
+            <tr>
+              <td>
+                <div class="videocarddiv">
+                  <img src="assets/imgs/demografy.png" class="videoimges">
+                </div>
+              </td>
+              <td>
+                <div class="videocarddiv">
+                  <img src="assets/imgs/demografy.png" class="videoimges">
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="ht_30"></div>
+
+      <div class="listpadd">
+        <ion-row class="NutritionalPam">
+          <ion-col size="7" class="vertical_centrC">
+            <div class="deitephic">Nutritional pamphlet</div>
+          </ion-col>
+
+          <ion-col size="5">
+            <div class="downloadBtn" (click)="download()">Downloads</div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="ht_20"></div>
+
+      <div class="listpadd">
+        <ion-row class="renidercard">
+          <ion-col size="4" class="vertical_centrC">
+            <img src="assets/imgs/remailnder.png" class="remailimge">
+          </ion-col>
+
+          <ion-col size="7" (click)="earlymorning()">
+            <div class="Reminderlbl">Reminder!</div>
+            <div class="updatedetail">Update your food details</div>
+          </ion-col>
+
+          <ion-col size="1" class="ion-no-padding">
+            <ion-icon name="close" class="closeicons"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+    <div class="ht_50"></div>
+
+  </div>
+
+</ion-content>

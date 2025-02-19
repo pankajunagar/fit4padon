@@ -1,0 +1,105 @@
+.maindiv{
+    background: #fff;
+    border-radius: 40px;
+}
+.divtop1{
+    width: 100%;
+    padding: 56px 0 0 0;
+}
+.heythere{
+    color: #000;
+    font-size: 13px;
+    text-align: center;
+}
+.welcomebc{
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 10px;
+}
+.itemclass{
+    background: #f7f8f8;
+    --background: #f7f8f8;    
+    border-radius: 50px;
+    --border-radius: 50px;
+}
+.iconcls{
+    font-size: 24px;
+    margin: 0px 10px 0px 0px;
+    color: #afafaf;
+}
+.ioninput{
+    background: #f7f8f8;
+    --background: #f7f8f8;    
+    border-radius: 50px;
+    --border-radius: 50px;
+}
+.paddiv{
+    padding: 0 26px;
+}
+.resenddiv{
+    font-size: 14px;
+    color: #afafaf;
+    text-align: right;
+}
+.bottomdiv{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: transparent;
+}
+.dontaccount{
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+}
+.googlelogo{
+    width: 60px;
+    height: 60px;
+    float: right;
+    margin-right: 10px;
+}
+.facebooklogo{
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-left: 10px;
+}
+.borderdiv{
+    background: transparent;
+    width: 80%;
+    position: absolute;
+    border-bottom: 1px solid #afafaf;
+}
+.ordiv{
+    height: 44px;
+    width: 40px;
+    background: #fff;
+    color: #919191;
+    font-size: 13px;
+    z-index: 11111;
+}
+.loginbtn{
+    text-transform: none;
+    --text-transform: none;
+    background: #ff9a98;
+    --background: #ff9a98;
+    color: #fff;
+    --color: #fff;
+    font-size: 16px;
+    --font-size: 16px;
+    border-radius: 50px;
+    --border-radius: 50px;
+    box-shadow: none;
+    --box-shadow: none;
+    font-weight: 500;
+    --font-weight: 500;
+    height: 50px;
+    --height: 50px;
+    width: 100%;
+    --width: 100%;
+    margin: auto;
+    display: table;
+}

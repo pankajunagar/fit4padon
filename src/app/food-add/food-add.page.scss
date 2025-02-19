@@ -1,0 +1,129 @@
+.backarrow {
+    color: #000;
+    font-size: 18px;
+    margin-left: 24px;
+}
+
+.heaertitle {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+}
+
+.listpadd {
+    padding: 0 14px;
+}
+
+.foodimgs {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+}
+
+.foodname {
+    font-size: 15px;
+    color: #000;
+    font-weight: 400;
+    padding-top: 6px;
+}
+
+.playcercul {
+    font-size: 24px;
+    color: #888888;
+}
+
+.listpadd {
+    padding: 0 20px;
+}
+
+.cameraicon {
+    font-size: 48px;
+    color: #c0c0c0;
+    padding-right: 10px;
+}
+
+.profileimg {
+    border-radius: 15px;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.fm {
+    color: #fff;
+    --background: #ff9a98;
+    padding: 8px;
+    border-radius: 30px;
+    width: fit-content;
+    padding: 4px;
+    font-size: 12px;
+}
+
+.titlehednm {
+    font-size: 15px;
+    color: #000;
+}
+
+.datespan {
+    font-size: 14px;
+    color: #888888;
+    padding: 0 50px;
+}
+
+.privios {
+    transform: rotate(180deg);
+}
+
+.playicon {
+    font-size: 16px;
+    color: #888888;
+}
+
+.dyvday {
+    text-align: center;
+    padding: 5px 0;
+}
+
+.dyvdate {
+    text-align: center;
+    padding: 5px 0;
+}
+
+.datenormals {
+    color: #858585;
+    font-size: 14px;
+    background: #fff;
+    padding: 10px 0;
+    border-radius: 14px;
+}
+
+.datemailsiv {
+    color: #fff;
+    font-size: 15px;
+    background: linear-gradient(135deg, #9bbdfe 24%, #93a9fd 60%);
+    padding: 10px 0;
+    border-radius: 14px;
+}
+
+.itemclass {
+    background: #f7f8f8;
+    --background: #f7f8f8;
+    border-radius: 50px;
+    --border-radius: 50px;
+    --min-height: 42px !important;
+}
+
+.timepicker {
+    background: #f7f8f8;
+    --background: #f7f8f8;
+    border-radius: 50px;
+    --border-radius: 50px;
+    font-size: 16px;
+    --font-size: 16px;
+    --padding-start: 8px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 4px;
+    color: #969696;
+}

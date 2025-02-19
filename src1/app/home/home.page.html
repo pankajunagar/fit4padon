@@ -1,0 +1,184 @@
+<ion-content class="fullback">
+
+  <div class="maindiv">
+    <img src="assets/imgs/logo.png" class="toplogo" alt="">
+
+    <div>
+      <div class="ht_20"></div>
+      <img src="assets/imgs/dot.png" class="dotlogos" alt="" (click)="notification()">
+      <div class="ht_10"></div>
+
+      <div class="pagepadd" (click)="profile()">
+        <div class="wecomdiv">welcome,</div>
+        <div class="username">{{config.logindata.first_name}}&nbsp;{{config.logindata.last_name}}
+        </div>
+        <div class="ht_30"></div>
+      </div>
+
+      <div class="listpadd">
+        <!-- <div class="fm" (click)="fmonitoring()">Food Morning</div> -->
+        <div class="ht_20"></div>
+
+        <div>
+          <ion-row class="MaincardRow">
+            <ion-col size="7">
+              <div class="Demographic">Demographic Data</div>
+              <div class="namedetail">{{gname}}</div>
+              <ion-button fill="clear" class="vivemore" (click)="demographic()">View more</ion-button>
+            </ion-col>
+            <ion-col size="5" class="vertical_centr">
+              <img src="{{config.api}}{{gimage}}" class="demoimg" alt="">
+            </ion-col>
+          </ion-row>
+          <div class="ht_20"></div>
+        </div>
+        <div>
+          <ion-row class="MaincardRow">
+            <ion-col size="7">
+              <div class="Demographic">Anthropomentry data</div>
+              <div class="namedetail">{{gname}}</div>
+              <ion-button fill="clear" class="vivemore" (click)="anthrophic()">View more</ion-button>
+            </ion-col>
+
+            <ion-col size="5" class="vertical_centr">
+              <img src="{{config.api}}{{gimage}}" class="demoimg" alt="">
+            </ion-col>
+          </ion-row>
+          <div class="ht_20"></div>
+        </div>
+
+        <div class="MaincardRow" style="padding: 10px;" *ngIf="clinical">
+          <ion-row class="MaincardRow" style="padding-top: 10px;" *ngIf="clinical">
+            <div class="ht_20"></div>
+            <div class="ht_20"></div>
+            <div class="ht_20"  *ngIf="clinical"></div>
+            <div class="Demographic1" *ngIf="clinical">Clinical</div>
+          </ion-row>  
+          <ion-row class="MaincardRow" >
+            <div class="namedetail" *ngIf="clinical">{{clinical}}</div>
+            <div class="ht_20"  *ngIf="clinical" ></div>
+          </ion-row> 
+          <ion-row class="MaincardRow" *ngIf="biochemical">
+            <div class="Demographic1"  *ngIf="biochemical" >Biochemical </div>
+          </ion-row>  
+          <ion-row class="MaincardRow" style="padding-bottom: 10px;" *ngIf="biochemical">
+            <div class="namedetail" *ngIf="biochemical">{{biochemical}}</div>
+
+            <div class="ht_20"  *ngIf="biochemical"></div>
+            <div class="ht_20"></div>
+          </ion-row>  
+         
+          
+        </div>  <div class="ht_20" *ngIf="clinical"></div>  
+
+
+
+        <ion-row class="MaincardRow" style="padding-top: 10px;" >
+          <ion-col size="6" class="vertical_centrC">
+            <div class="deitephic">Diet History</div>
+          </ion-col>
+
+          <ion-col size="6">
+            <div class="ckeckBtn" (click)="DietHistrory()">Check</div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="ht_30"></div>
+
+      <div class="scrollxpadd">
+        <div class="cildwood">Food Monitoring</div>
+        <div class="ht_20"></div>
+        <div style="overflow-x:auto;">
+          <table>
+            <tr>
+              <td (click)="fmonitoring()">
+                <div class="maincarddiv">
+                  <img src="assets/imgs/food.jpeg" class="foodimgs">
+                  <div class="earlymorning">Add food details</div>
+                  <div class="ht_10"></div>
+                </div>
+              </td>
+              <!--
+              <td *ngFor="let c of category" (click)="fmonitoring()">
+                <div class="maincarddiv">
+                  <img src="{{config.imgapi}}{{c.icon}}" class="foodimgs">
+                  <div class="earlymorning">{{c.name}}</div>
+                   <div class="choicesdiv">{{c.total_food}}+ Choices</div>
+                  <div class="selectBtn" (click)="fmonitoring()">Select</div> 
+                  <div class="ht_10"></div>
+                </div>
+              </td>
+              -->
+
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="ht_30"></div>
+
+      <div class="scrollxpadd">
+        <div class="cildwood" (click)="gallery()">Video Gallery</div>
+
+        <div class="ht_20"></div>
+
+        <div style="overflow-x:auto;">
+          <table>
+            <tr>
+              <td *ngFor="let v of videos">
+                <div class="videocarddiv">
+                  <video controls="controls" preload="metadata" webkit-playsinline="webkit-playsinline"
+                    style="width: 100%;height: fit-content;">
+                    <source src="{{config.imgapi}}{{v.url}}" type="video/mp4" />
+                  </video>
+                </div>
+              </td>
+              <!-- <td>
+                <div class="videocarddiv">
+                  <img src="assets/imgs/demografy.png" class="videoimges">
+                </div>
+              </td> -->
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="ht_30"></div>
+
+      <div class="listpadd">
+        <ion-row class="NutritionalPam">
+          <ion-col size="7" class="vertical_centrC">
+            <div class="deitephic">Nutritional pamphlet</div>
+          </ion-col>
+
+          <ion-col size="5">
+            <div class="downloadBtn" (click)="download()">Downloads</div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="ht_20"></div>
+
+      <div class="listpadd" *ngIf="displydata == '0'">
+        <ion-row class="renidercard">
+          <ion-col size="4" class="vertical_centrC">
+            <!-- <img src="assets/imgs/remailnder.png" class="remailimge"> -->
+            <img src="assets/imgs/clock.png" class="remailimge">
+          </ion-col>
+          <ion-col size="7" (click)="earlymorning()">
+            <div class="Reminderlbl">Reminder!</div>
+            <div class="updatedetail">Update your food details</div>
+          </ion-col>
+          <!-- <ion-col size="1" class="ion-no-padding">
+            <ion-icon name="close" class="closeicons"></ion-icon>
+          </ion-col>  -->
+        </ion-row>
+      </div>
+    </div>
+
+    <div class="ht_50"></div>
+
+  </div>
+
+</ion-content>
